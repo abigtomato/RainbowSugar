@@ -1,6 +1,7 @@
 package com.abigtomato.rainbowsugar.commons.utils;
 
 import okhttp3.*;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
 import java.util.Iterator;
@@ -23,7 +24,7 @@ public class OkHttpClientUtil {
         clientBuilder.readTimeout(READ_TIMEOUT, TimeUnit.SECONDS);
         // 连接超时
         clientBuilder.connectTimeout(CONNECT_TIMEOUT, TimeUnit.SECONDS);
-        //写入超时
+        // 写入超时
         clientBuilder.writeTimeout(WRITE_TIMEOUT, TimeUnit.SECONDS);
         okHttpClient = clientBuilder.build();
     }
@@ -106,12 +107,12 @@ public class OkHttpClientUtil {
         // 执行 Call
         call.enqueue(new Callback() {
             @Override
-            public void onFailure(Call call, IOException e) {
+            public void onFailure(@NotNull Call call, @NotNull IOException e) {
                 myNetCall.failed(call, e);
             }
 
             @Override
-            public void onResponse(Call call, Response response) throws IOException {
+            public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
                 myNetCall.success(call, response);
             }
         });
@@ -146,7 +147,7 @@ public class OkHttpClientUtil {
                 .post(body)
                 .build();
         Response response = okHttpClient.newCall(request).execute();
-        if (response.isSuccessful()) {
+        if (response.isSuccessful() && response.body() != null) {
             return response.body().string();
         } else {
             throw new IOException("Unexpected code " + response);
@@ -156,10 +157,10 @@ public class OkHttpClientUtil {
     /**
      * 异步 POST 请求，使用 JSON 格式作为参数
      *
-     * @param url       请求地址
-     * @param json      JSON 格式参数
-     * @param myNetCall 回调函数
-     * @throws IOException 异常
+     * @param url           请求地址
+     * @param json          JSON 格式参数
+     * @param myNetCall     回调函数
+     * @throws IOException  异常
      */
     public void postJsonAsync(String url, String json, final MyNetCall myNetCall) throws IOException {
         RequestBody body = RequestBody.create(JSON, json);
@@ -174,13 +175,13 @@ public class OkHttpClientUtil {
      * @return {@link RequestBody}
      */
     private RequestBody setRequestBody(Map<String, String> bodyParams) {
-        RequestBody body = null;
+        RequestBody body;
         okhttp3.FormBody.Builder formEncodingBuilder = new okhttp3.FormBody.Builder();
         if (bodyParams != null) {
             Iterator<String> iterator = bodyParams.keySet().iterator();
             String key = "";
             while (iterator.hasNext()) {
-                key = iterator.next().toString();
+                key = iterator.next();
                 formEncodingBuilder.add(key, bodyParams.get(key));
             }
         }
@@ -203,12 +204,12 @@ public class OkHttpClientUtil {
         // 执行 Call
         call.enqueue(new Callback() {
             @Override
-            public void onFailure(Call call, IOException e) {
+            public void onFailure(@NotNull Call call, @NotNull IOException e) {
                 myNetCall.failed(call, e);
             }
 
             @Override
-            public void onResponse(Call call, Response response) throws IOException {
+            public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
                 myNetCall.success(call, response);
             }
         });
@@ -218,12 +219,13 @@ public class OkHttpClientUtil {
      * 自定义网络回调接口
      */
     public interface MyNetCall {
+
         /**
          * 请求成功的回调处理
          *
-         * @param call     {@link Call}
-         * @param response {@link Response}
-         * @throws IOException 异常
+         * @param call          {@link Call}
+         * @param response      {@link Response}
+         * @throws IOException  异常
          */
         void success(Call call, Response response) throws IOException;
 
