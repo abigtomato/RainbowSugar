@@ -29,7 +29,7 @@
         <java.version>1.8</java.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <dependency.scala.version>2.11.8</dependency.scala.version>
+        <dependency.scala.version>2.13.1</dependency.scala.version>
         <plugin.maven.scala.version>3.4.6</plugin.maven.scala.version>
         <flink.version>1.7.2</flink.version>
         <spark.version>2.3.1</spark.version>
