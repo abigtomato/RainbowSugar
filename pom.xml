@@ -4,12 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
     <modules>
-        <module>LearningSpark</module>
-        <module>LearningFlink</module>
-        <module>LearningScala</module>
-        <module>MovieRecommendSystem</module>
-        <module>UserBehaviorAnalysis</module>
-        <module>CommerceUserBehaviorAnalysis</module>
+        <module>learn-spark</module>
+        <module>learn-flink</module>
+        <module>learn-scala</module>
+        <module>movie-recommend-system</module>
+        <module>user-behavior-analysis</module>
+        <module>commerce-user-behavior-analysis</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -18,9 +18,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.abigtomato</groupId>
-    <artifactId>RainbowSugar</artifactId>
+    <artifactId>rainbow-sugar</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>RainbowSugar</name>
+    <name>rainbow-sugar</name>
     <description>Learning Project</description>
 
     <properties>
@@ -328,6 +328,10 @@
         </dependency>
     </dependencies>
 
+    <dependencyManagement>
+
+    </dependencyManagement>
+
     <build>
         <plugins>
             <!--      spring boot maven 插件      -->
@@ -352,7 +356,7 @@
                 </executions>
             </plugin>
 
-            <!--      在项目中既有java又有scala代码时，配置 maven-scala-plugin 插件打包时可以将两类代码一起打包      -->
+            <!--      在项目中既有java又有scala代码时可以将两类代码一起打包      -->
             <plugin>
                 <groupId>org.scala-tools</groupId>
                 <artifactId>maven-scala-plugin</artifactId>
@@ -417,5 +421,9 @@
                 </configuration>
             </plugin>
         </plugins>
+
+        <pluginManagement>
+
+        </pluginManagement>
     </build>
 </project>
