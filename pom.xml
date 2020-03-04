@@ -18,9 +18,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.abigtomato</groupId>
-    <artifactId>rainbow-sugar</artifactId>
+    <artifactId>bigdata-examples</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>rainbow-sugar</name>
+    <name>bigdata-examples</name>
     <description>Learning Project</description>
 
     <properties>
