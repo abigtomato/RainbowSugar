@@ -1,8 +1,8 @@
-package com.albert.api.sink
+package com.abigtomato.learn.api.sink
+
+import com.abigtomato.learn.api.source.SensorReading
 
 import java.util.Properties
-
-import com.albert.api.source.SensorReading
 import org.apache.flink.api.common.serialization.SimpleStringSchema
 import org.apache.flink.streaming.api.scala._
 import org.apache.flink.streaming.connectors.kafka.{FlinkKafkaConsumer011, FlinkKafkaProducer011}

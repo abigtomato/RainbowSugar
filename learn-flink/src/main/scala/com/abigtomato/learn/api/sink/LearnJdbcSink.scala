@@ -1,8 +1,8 @@
-package com.albert.api.sink
+package com.abigtomato.learn.api.sink
+
+import com.abigtomato.learn.api.source.SensorReading
 
 import java.sql.{Connection, DriverManager, PreparedStatement}
-
-import com.albert.api.source.SensorReading
 import org.apache.flink.configuration.Configuration
 import org.apache.flink.streaming.api.functions.sink.RichSinkFunction
 import org.apache.flink.streaming.api.scala._

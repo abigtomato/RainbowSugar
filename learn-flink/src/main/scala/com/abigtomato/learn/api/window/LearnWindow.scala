@@ -1,6 +1,6 @@
-package com.albert.api.window
+package com.abigtomato.learn.api.window
 
-import com.albert.api.source.SensorReading
+import com.abigtomato.learn.api.source.SensorReading
 import org.apache.flink.streaming.api.TimeCharacteristic
 import org.apache.flink.streaming.api.functions.timestamps.BoundedOutOfOrdernessTimestampExtractor
 import org.apache.flink.streaming.api.functions.{AssignerWithPeriodicWatermarks, AssignerWithPunctuatedWatermarks}

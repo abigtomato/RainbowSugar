@@ -1,4 +1,4 @@
-package com.albert.api.table
+package com.abigtomato.learn.api.table
 
 import java.util.Properties
 

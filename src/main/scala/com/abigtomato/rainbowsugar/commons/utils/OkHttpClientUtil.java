@@ -1,8 +1,8 @@
 package com.abigtomato.rainbowsugar.commons.utils;
 
 import okhttp3.*;
-import org.jetbrains.annotations.NotNull;
 
+import javax.validation.constraints.NotNull;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.Map;

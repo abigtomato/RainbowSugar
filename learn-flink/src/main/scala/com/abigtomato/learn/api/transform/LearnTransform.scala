@@ -1,6 +1,6 @@
-package com.albert.api.transform
+package com.abigtomato.learn.api.transform
 
-import com.albert.api.source.SensorReading
+import com.abigtomato.learn.api.source.SensorReading
 import org.apache.flink.api.common.functions.{FilterFunction, RichFilterFunction, RichFlatMapFunction, RichFunction}
 import org.apache.flink.configuration.Configuration
 import org.apache.flink.streaming.api.scala._

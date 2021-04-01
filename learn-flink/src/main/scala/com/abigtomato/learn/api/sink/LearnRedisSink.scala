@@ -1,6 +1,6 @@
-package com.albert.api.sink
+package com.abigtomato.learn.api.sink
 
-import com.albert.api.source.SensorReading
+import com.abigtomato.learn.api.source.SensorReading
 import org.apache.flink.streaming.api.scala._
 import org.apache.flink.streaming.connectors.redis.RedisSink
 import org.apache.flink.streaming.connectors.redis.common.config.FlinkJedisPoolConfig

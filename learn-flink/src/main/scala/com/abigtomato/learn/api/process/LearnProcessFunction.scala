@@ -1,6 +1,6 @@
-package com.albert.api.process
+package com.abigtomato.learn.api.process
 
-import com.albert.api.source.SensorReading
+import com.abigtomato.learn.api.source.SensorReading
 import org.apache.flink.api.common.functions.RichFlatMapFunction
 import org.apache.flink.api.common.state.{ValueState, ValueStateDescriptor}
 import org.apache.flink.configuration.Configuration

@@ -1,6 +1,6 @@
-package com.albert.api.process
+package com.abigtomato.learn.api.process
 
-import com.albert.api.source.SensorReading
+import com.abigtomato.learn.api.source.SensorReading
 import org.apache.flink.streaming.api.TimeCharacteristic
 import org.apache.flink.streaming.api.functions.ProcessFunction
 import org.apache.flink.streaming.api.functions.timestamps.BoundedOutOfOrdernessTimestampExtractor

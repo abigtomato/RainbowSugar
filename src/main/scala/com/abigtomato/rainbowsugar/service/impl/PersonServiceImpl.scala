@@ -9,8 +9,7 @@ import org.springframework.data.domain.{Page, Pageable}
 import org.springframework.stereotype.Service
 
 @Service
-class PersonServiceImpl @Autowired() (personSupport: PersonSupport,
-                                      personRepository: PersonRepository) extends PersonService {
+class PersonServiceImpl @Autowired() (personSupport: PersonSupport) extends PersonService {
   /**
    *
    * @param person

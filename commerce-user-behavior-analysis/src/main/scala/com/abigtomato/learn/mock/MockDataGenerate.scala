@@ -58,18 +58,18 @@ object MockDataGenerate {
     val rows = ArrayBuffer[UserVisitAction]()
 
     // 一共生成100个用户（有重复）
-    for (i <- 0 to 100) {
+    for (_ <- 0 to 100) {
       val userId = random.nextInt(100)
 
       // 每个用户产生10个session会话
-      for (j <- 0 to 10) {
+      for (_ <- 0 to 10) {
         // 不可变的，全局唯一的，128bit的标识符UUID，用于表示一个sessionId
         val sessionId = UUID.randomUUID().toString.replace("-", "")
         // 在yyyy-MM-dd后面添加一个随机的小时时间（0-23）
         val baseActionTime = date + " " + random.nextInt(23)
 
         // 每个（userId + sessionId）随机生成0-100条用户访问数据
-        for (k <- 0 to random.nextInt(100)) {
+        for (_ <- 0 to random.nextInt(100)) {
           // 随机生成0-10的页面id
           val pageId = random.nextInt(10)
           // 在yyyy-MM-dd HH后面添加随机的分和秒
