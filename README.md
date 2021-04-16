@@ -1,2 +1,1 @@
-# RainbowSugar
-A variety of technical learning programs
+# 大数据相关技术示例项目
